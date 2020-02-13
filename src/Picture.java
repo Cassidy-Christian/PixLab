@@ -153,6 +153,61 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+	public void mirrorVerticalRightToLeft() {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length; row++) {
+			for (int col = 0; col < width / 2; col++) {
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][width - 1 - col];
+				leftPixel.setColor(rightPixel.getColor());
+			}
+		}
+	}
+
+	public void mirrorDiagonal() {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topRightPixel;
+		Pixel bottomLeftPixel;
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length; row++) {
+			for (int col = 0; col < row; col++) {
+				bottomLeftPixel = pixels[row][col];
+				topRightPixel = pixels[col][row];
+				topRightPixel.setColor(bottomLeftPixel.getColor());
+			}
+		}
+	}
+
+	public void mirrorHorizontal() {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length/2; row++) {
+			for (int col = 0; col < width; col++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[pixels.length-1-row][col];
+				bottomPixel.setColor(topPixel.getColor());
+			}
+		}
+	}
+
+	public void mirrorHorizontalBotToTop() {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
+		int width = pixels[0].length;
+		for (int row = 0; row < pixels.length/2; row++) {
+			for (int col = 0; col < width; col++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[pixels.length-1-row][col];
+				topPixel.setColor(bottomPixel.getColor());
+			}
+		}
+	}
 
 	/** Mirror just part of a picture of a temple */
 	public void mirrorTemple() {
@@ -250,10 +305,10 @@ public class Picture extends SimplePicture {
 		// beach.grayscale();
 		// beach.explore();
 
-		Picture water = new Picture("water.jpg"); 
-		water.explore(); 
-		water.fixUnderwater(); 
-		water.explore(); 
+		Picture caterpillar = new Picture("caterpillar.jpg"); 
+		caterpillar.explore(); 
+		caterpillar.mirrorDiagonal(); 
+		caterpillar.explore(); 
 	}
 
 } // this } is the end of class Picture, put all new methods before this
