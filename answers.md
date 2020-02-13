@@ -5,3 +5,8 @@
 5. Yes, it would compile. It compiled because Picture extends SimplePicture and SimplePicture implements DigitalPicture
 6. Yes, it compiles. It ia an example of classic inheritance. 
 7. No, it would not compile. Picture is a child class of SimplePicture and a parent class can't call from a child class. 
+
+
+Actcivity 7 
+1. 90=10*9
+2. 112= 7*16 
