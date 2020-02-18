@@ -231,15 +231,36 @@ public class Picture extends SimplePicture {
 		System.out.println(count); 
 	}
 
+	public void mirrorGull() {
+		int mirrorPoint = 346;
+		Pixel leftPixel = null;
+		Pixel rightPixel = null;
+		int count = 0;
+		Pixel[][] pixels = this.getPixels2D();
+
+		// loop through the rows
+		for (int row = 222; row < 320; row++) {
+			// loop from 13 to just before the mirror point
+			for (int col = 45; col < mirrorPoint; col++) {
+
+				leftPixel = pixels[row][col];
+				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+				rightPixel.setColor(leftPixel.getColor());
+				count++; 
+			}
+		}
+		System.out.println(count); 
+	}
+
 	public void mirrorArms() {
-		int mirrorPoint = 206;
+		int mirrorPoint = 207;
 		Pixel topPixel = null;
 		Pixel bottomPixel = null;
 		int count = 0;
 		Pixel[][] pixels = this.getPixels2D();
 
 		// loop through the rows
-		for (int row = 150; row < 191; row++) {
+		for (int row = 160; row < 300; row++) {
 			// loop from 13 to just before the mirror point
 			for (int col = 102; col < mirrorPoint; col++) {
 
@@ -328,10 +349,10 @@ public class Picture extends SimplePicture {
 		// beach.grayscale();
 		// beach.explore();
 
-		Picture snowman = new Picture("snowman.jpg"); 
-		snowman.explore(); 
-		snowman.mirrorArms(); 
-		snowman.explore(); 
+		Picture seagull = new Picture("seagull.jpg"); 
+		seagull.explore(); 
+		seagull.mirrorGull(); 
+		seagull.explore(); 
 	}
 
 } // this } is the end of class Picture, put all new methods before this
