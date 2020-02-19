@@ -28,7 +28,7 @@ public class PictureTester
     beach.negate(); 
     beach.explore(); 
   }
-  public static void testGraysclae(){
+  public static void testGrayscale(){
     Picture beach=new Picture ("beach.jpg"); 
     beach.explore(); 
     beach.grayscale(); 
@@ -85,7 +85,7 @@ public class PictureTester
     // testZeroBlue();
     // testKeepOnlyBlue(); 
     // testGrayscale(); 
-    testFixUnderwater(); 
+    testGrayscale(); 
     // //testKeepOnlyBlue();
     // // testKeepOnlyRed();
     // // testKeepOnlyGreen();

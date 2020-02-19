@@ -108,9 +108,9 @@ public class Picture extends SimplePicture {
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
 			for (Pixel pixelObj : rowArray) {
-				pixelObj.setBlue(200-pixelObj.getBlue());
-				pixelObj.setGreen(200-pixelObj.getGreen());
-				pixelObj.setRed(200-pixelObj.getRed());
+				pixelObj.setBlue(pixelObj.getBlue()/5);
+				pixelObj.setGreen(pixelObj.getGreen()/5);
+				pixelObj.setRed(pixelObj.getRed()/5);
 			}
 		}
 	}
@@ -248,10 +248,15 @@ public class Picture extends SimplePicture {
 		// beach.grayscale();
 		// beach.explore();
 
-		Picture water = new Picture("water.jpg"); 
+		Picture water = new Picture("swan.jpg"); 
 		water.explore(); 
-		water.fixUnderwater(); 
+		water.grayscale(); 
 		water.explore(); 
+
+		// Picture water = new Picture("swan.jpg"); 
+		// water.explore(); 
+		// water.fixUnderwater(); 
+		// water.explore();
 	}
 
 } // this } is the end of class Picture, put all new methods before this
