@@ -40,7 +40,7 @@ $ git branch a#
 Then checkout it out
 ```
 $ git checkout a#
-```
+`` 
 
 Or, you can create and switch with one command with the `-b` shortcut
 ```
