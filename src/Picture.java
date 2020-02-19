@@ -114,14 +114,12 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
-
+// for da fishhhhhh!! 
 	public void fixUnderwater(){
 		Pixel[][] pixels= this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
-			for (Pixel pixelObj : rowArray) {
-				pixelObj.setBlue(200-pixelObj.getBlue());
-				pixelObj.setGreen(0-pixelObj.getGreen());
-				pixelObj.setRed(0-pixelObj.getRed());
+			for (Pixel pixelObj : rowArray) { 
+				pixelObj.setRed(pixelObj.getRed()*8); 
 			}
 		}
 	}
