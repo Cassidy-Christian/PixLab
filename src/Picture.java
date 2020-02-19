@@ -299,6 +299,20 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+public void newCopy(Picture fromPic, int fromStartRow, int fromStartCol, int fromEndRow, int fromEndCol, int toStartRow, int toStartCol)
+ {
+ Pixel fromPixel = null;
+ Pixel toPixel = null;
+ Pixel[][] toPixels = this.getPixels2D();
+ Pixel[][] fromPixels = fromPic.getPixels2D();
+for (int fromRow = fromStartRow, toRow = toStartRow; fromRow <= fromEndRow && toRow < toPixels.length; fromRow++, toRow++){
+ 	for (int fromCol = fromStartCol, toCol = toStartCol; fromCol <= fromEndCol && toCol < toPixels[0].length; fromCol++, toCol++){
+ 		fromPixel = fromPixels[fromRow][fromCol];
+ 		toPixel = toPixels[toRow][toCol];
+ 		toPixel.setColor(fromPixel.getColor());
+ }
+ }
+ } 
 
 	/** Method to create a collage of several pictures */
 	public void createCollage() {
@@ -349,9 +363,9 @@ public class Picture extends SimplePicture {
 		// beach.grayscale();
 		// beach.explore();
 
-		Picture seagull = new Picture("seagull.jpg"); 
+		Picture seagull = new Picture("seagull.jpg", 70, 80); 
 		seagull.explore(); 
-		seagull.mirrorGull(); 
+		seagull.newCopy(); 
 		seagull.explore(); 
 	}
 

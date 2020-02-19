@@ -108,6 +108,8 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+
+  public static void 
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -136,7 +138,7 @@ public class PictureTester
     // //testFixUnderwater();
     //testMirrorVertical();
     // testMirrorVerticalRightToLeft(); 
-    testMirrorGull(); 
+    testCollage(); 
     // testMirrorTemple();
     // //testMirrorArms();
     // //testMirrorGull();
