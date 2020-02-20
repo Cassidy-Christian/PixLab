@@ -95,7 +95,7 @@ public class PictureTester
 
   public static void testMirrorGull()
   {
-    Picture gull = new Picture("seagull.jpg");
+    Picture seagull = new Picture("seagull.jpg");
     seagull.explore();
     seagull.mirrorGull();
     seagull.explore();
@@ -109,13 +109,19 @@ public class PictureTester
     canvas.explore();
   }
 
-  public static void 
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+
+  public static void testNewEdgeDetection()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.newEdgeDetection(10);
     swan.explore();
   }
   
@@ -138,7 +144,8 @@ public class PictureTester
     // //testFixUnderwater();
     //testMirrorVertical();
     // testMirrorVerticalRightToLeft(); 
-    testEdgeDetection(); 
+    testNewEdgeDetection(); 
+    testEdgeDetection();; 
     // testMirrorTemple();
     // //testMirrorArms();
     // //testMirrorGull();
