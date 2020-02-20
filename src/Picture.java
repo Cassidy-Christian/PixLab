@@ -105,13 +105,20 @@ public class Picture extends SimplePicture {
 		}
 	}
 	public void grayscale(){
+		int avgcolor; 
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
 			for (Pixel pixelObj : rowArray) {
-				pixelObj.setBlue(pixelObj.getBlue()/5);
-				pixelObj.setGreen(pixelObj.getGreen()/5);
-				pixelObj.setRed(pixelObj.getRed()/5);
+			avgcolor=
+				((pixelObj.getBlue())+
+				(pixelObj.getGreen())+
+				(pixelObj.getRed()))/3; 
+
+				pixelObj.setBlue(avgcolor); 
+				pixelObj.setGreen(avgcolor);
+				pixelObj.setRed(avgcolor);  
 			}
+			
 		}
 	}
 // for da fishhhhhh!! 
