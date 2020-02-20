@@ -95,7 +95,7 @@ public class PictureTester
 
   public static void testMirrorGull()
   {
-    Picture gull = new Picture("seagull.jpg");
+    Picture seagull = new Picture("seagull.jpg");
     seagull.explore();
     seagull.mirrorGull();
     seagull.explore();
@@ -109,7 +109,23 @@ public class PictureTester
     canvas.explore();
   }
 
-  public static void 
+  public static void testNewCopy(){
+    Picture snowman= new Picture("snowman.jpg"); 
+		Picture snowman2 = new Picture("snowman.jpg"); 
+
+		//snowman.newCopy(snowman2); 
+		snowman.explore();
+		snowman.newCopy(snowman2, 81, 164, 161, 242, 230, 57);
+		snowman.newCopy(snowman2, 81, 164, 161, 242, 110, 304);
+		snowman.explore(); 
+  }
+
+  public static void testMyCollage(){
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage(); 
+    canvas.explore(); 
+  }
+ 
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -138,7 +154,7 @@ public class PictureTester
     // //testFixUnderwater();
     //testMirrorVertical();
     // testMirrorVerticalRightToLeft(); 
-    testCollage(); 
+    testMyCollage(); 
     // testMirrorTemple();
     // //testMirrorArms();
     // //testMirrorGull();

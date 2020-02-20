@@ -330,6 +330,25 @@ for (int fromRow = fromStartRow, toRow = toStartRow; fromRow <= fromEndRow && to
 		this.write("collage.jpg");
 	}
 
+	public void myCollage(){
+
+		Picture koala1 = new Picture("koala.jpg");
+		Picture arch = new Picture("arch.jpg");
+		Picture beach = new Picture ("beach.jpg");
+
+		this.copy(koala1, 0, 0); 
+		this.copy(arch, 100, 0);
+		this.copy(koala1, 200, 0);
+		Picture archNoBlue = new Picture(arch);
+		archNoBlue.zeroBlue();
+		this.copy(archNoBlue, 300, 0);
+		this.copy(beach, 400, 0);
+		this.copy(beach, 500, 0);
+		this.mirrorVertical();
+		this.write("collage.jpg");
+	}
+
+
 	/**
 	 * Method to show large changes in color
 	 * 
@@ -363,10 +382,23 @@ for (int fromRow = fromStartRow, toRow = toStartRow; fromRow <= fromEndRow && to
 		// beach.grayscale();
 		// beach.explore();
 
-		Picture seagull = new Picture("seagull.jpg", 70, 80); 
-		seagull.explore(); 
-		seagull.newCopy(); 
-		seagull.explore(); 
+		// Picture seagull = new Picture("seagull.jpg", 70, 80); 
+		// seagull.explore(); 
+		// seagull.newCopy(); 
+		// seagull.explore(); 
+
+		//createCollage(); 
+
+		Picture snowman= new Picture("snowman.jpg"); 
+		Picture snowman2 = new Picture("snowman.jpg"); 
+
+		//snowman.newCopy(snowman2); 
+		snowman.explore();
+		snowman.newCopy(snowman2, 81, 164, 161, 242, 230, 57);
+		snowman.newCopy(snowman2, 81, 164, 161, 242, 110, 304);
+		snowman.explore();  
+
+		
 	}
 
 } // this } is the end of class Picture, put all new methods before this
